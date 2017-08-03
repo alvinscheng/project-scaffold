@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom'
 import App from './components/app'
 import store from './store'
 
+const $app = document.querySelector('#app')
+
 function render() {
+  const hello = store.getState()
   ReactDOM.render(
-    <App />,
-    document.querySelector('#app')
+    <App hello={ hello } />,
+    $app
   )
 }
 
-store.subscribe(render)
-
 render()
+
+store.subscribe(render)
