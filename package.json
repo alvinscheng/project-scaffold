@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "tdd": "mocha test/ -w -R min",
     "bundle": "browserify -t babelify client/index.js -o server/public/bundle.js",
     "watch:client": "watchify -vd -t babelify client/index.js -o server/public/bundle.js",
     "watch:server": "nodemon server/index.js --ignore server/public/**",
